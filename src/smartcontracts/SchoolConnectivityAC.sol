@@ -63,6 +63,11 @@ contract SchoolConnectivityAC is AccessControl {
         validData(downloadSpeed, uploadSpeed, latency)
         onlyRole(DATA_SUBMITTER_ROLE)
     {
+        // Prevent duplicate entries for the same school and timestamp
+        if (latestData[schoolId].timestamp == timestamp) {
+            revert("Duplicate entry for the same timestamp");
+        }
+
         // Update the latest data entry on-chain
         latestData[schoolId] = ConnectivityData(
             timestamp,
