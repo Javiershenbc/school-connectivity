@@ -98,13 +98,13 @@ The contract is also compatible with Layer 2 blockchains like Polygon and zkRoll
 
 The following diagrams illustrates the architecture:
 
-![Data Submission Process](./assets/Data_Submission.png)
+![Data Submission Process](/src/assets/Data_Submission.png)
 
 - **App Instance:** Each app simulates input (e.g., speed test results) and interacts with the blockchain directly.
 - **Blockchain Layer 1:** Stores critical metadata (e.g., hashes) while keeping data decentralized.
 - **On Chain Data**: The meta data is stored on the blockchain and it emits an event which allows off-chain mechanism to interact.
 
-![Data Retrieve Process](./assets/Data_retrieve.png)
+![Data Retrieve Process](/src/assets/Data_retrieve.png)
 
 - **App Instance:** Each app simulates input (e.g., speed test results) and interacts with the blockchain directly.
 - **Off Chain Data**: Data Submission events can be read off chain, reducing posible gas fees.
